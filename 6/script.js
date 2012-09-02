@@ -1,12 +1,14 @@
-var $ = function(el) {
+var array = ["Red", "Green", "Blue"];
+
+function $(el) {
     return document.getElementById(el);
-},
-array = ["Red", "Green", "Blue"];
+}
 
 function display() {
+    var i, el;
     $("colors").innerHTML = "";
-    for(var i=0;i<array.length;++i) {
-	var el = document.createElement("div");
+    for (i = 0; i < array.length; ++i) {
+	el = document.createElement("div");
 	el.style["background-color"] = array[i];
 	el.style.height = "50px";
 	el.style.width = "200px";
@@ -15,15 +17,11 @@ function display() {
 }
 
 
-window.onload = function() {
+window.onload = function () {
     display();
-
-    $("update").onclick = function() {
-	// Adding 2 new colors
+    $("update").onclick = function () { 
 	array[3] = "Purple";
-	array[4] = "Black";
-	
+	array[4] = "Black"; // Adding 2 new colors
 	display();
     };
-
 };
