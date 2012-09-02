@@ -69,5 +69,4 @@ window.onload = function () {
 	display();
     }, false);
 
-    $("button").click();
 };
